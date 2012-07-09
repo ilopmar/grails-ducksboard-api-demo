@@ -77,7 +77,7 @@
 		<h1>Widgets</h1>
         
         <h2>Counter</h2>
-        <g:formRemote name="counter1" update="updateCounter1" url="[controller:'demo', action:'updateLong', params:[countId:'64746']]">
+        <g:formRemote name="counter1" update="updateCounter1" url="[controller:'demo', action:'updateLong', params:[widgetId:'64746']]">
             <label for="counter1">Counter 1 value</label>
             <g:textField id="counter1" name="value"/>
             
@@ -86,7 +86,7 @@
         <div id="updateCounter1"></div>
         
         <h2>Pins</h2>
-        <g:formRemote name="pin1" update="updatePin1" url="[controller:'demo', action:'updateLong', params:[countId:'64578']]">
+        <g:formRemote name="pin1" update="updatePin1" url="[controller:'demo', action:'updateLong', params:[widgetId:'64578']]">
             <label for="pin1">Pin 1 value</label>
             <g:textField id="pin1" name="value"/>
             
@@ -94,7 +94,7 @@
         </g:formRemote>
         <div id="updatePin1"></div>
         
-        <g:formRemote name="pin2" update="updatePin2" url="[controller:'demo', action:'updateLong', params:[countId:'64577']]">
+        <g:formRemote name="pin2" update="updatePin2" url="[controller:'demo', action:'updateLong', params:[widgetId:'64577']]">
             <label for="pin2">Pin 2 value</label>
             <g:textField id="pin2" name="value"/>
             
@@ -104,7 +104,7 @@
         
         
         <h2>Boxes</h2>
-        <g:formRemote name="box1" update="updateBox1" url="[controller:'demo', action:'updateLong', params:[countId:'64741']]">
+        <g:formRemote name="box1" update="updateBox1" url="[controller:'demo', action:'updateLong', params:[widgetId:'64741']]">
             <label for="box1">Box 1 value</label>
             <g:textField id="box1" name="value"/>
             
@@ -112,7 +112,7 @@
         </g:formRemote>
         <div id="updateBox1"></div>
         
-        <g:formRemote name="box2" update="updateBox2" url="[controller:'demo', action:'updateLong', params:[countId:'64740']]">
+        <g:formRemote name="box2" update="updateBox2" url="[controller:'demo', action:'updateLong', params:[widgetId:'64740']]">
             <label for="box2">Box 2 value</label>
             <g:textField id="box2" name="value"/>
             
@@ -120,7 +120,7 @@
         </g:formRemote>
         <div id="updateBox2"></div>
         
-        <g:formRemote name="box3" update="updateBox3" url="[controller:'demo', action:'updateLong', params:[countId:'64739']]">
+        <g:formRemote name="box3" update="updateBox3" url="[controller:'demo', action:'updateLong', params:[widgetId:'64739']]">
             <label for="box3">Box 3 value</label>
             <g:textField id="box3" name="value"/>
             
@@ -129,7 +129,7 @@
         <div id="updateBox3"></div>
         
         <h2>Bars</h2>
-        <g:formRemote name="bar1" update="updateBar1" url="[controller:'demo', action:'updateLong', params:[countId:'64742']]">
+        <g:formRemote name="bar1" update="updateBar1" url="[controller:'demo', action:'updateLong', params:[widgetId:'64742']]">
             <label for="bar1">Bar 1 value</label>
             <g:textField id="bar1" name="value"/>
             
@@ -137,7 +137,7 @@
         </g:formRemote>
         <div id="updateBar1"></div>
         
-        <g:formRemote name="bar2" update="updateBar2" url="[controller:'demo', action:'updateLong', params:[countId:'64743']]">
+        <g:formRemote name="bar2" update="updateBar2" url="[controller:'demo', action:'updateLong', params:[widgetId:'64743']]">
             <label for="bar2">Bar 2 value</label>
             <g:textField id="bar2" name="value"/>
             
@@ -145,7 +145,7 @@
         </g:formRemote>
         <div id="updateBar2"></div>
         
-        <g:formRemote name="bar3" update="updateBar3" url="[controller:'demo', action:'updateLong', params:[countId:'64744']]">
+        <g:formRemote name="bar3" update="updateBar3" url="[controller:'demo', action:'updateLong', params:[widgetId:'64744']]">
             <label for="bar3">Bar 3 value</label>
             <g:textField id="bar3" name="value"/>
             
@@ -153,7 +153,7 @@
         </g:formRemote>
         <div id="updateBar3"></div>
         
-        <g:formRemote name="bar4" update="updateBar4" url="[controller:'demo', action:'updateLong', params:[countId:'64745']]">
+        <g:formRemote name="bar4" update="updateBar4" url="[controller:'demo', action:'updateLong', params:[widgetId:'64745']]">
             <label for="bar4">Bar 4 value</label>
             <g:textField id="bar4" name="value"/>
             
@@ -161,6 +161,53 @@
         </g:formRemote>
         <div id="updateBar4"></div>
         
+        <h2>Gauges</h2>
+        <g:formRemote name="gauge1" update="updateGauge1" url="[controller:'demo', action:'updateDouble', params:[widgetId:'64748']]">
+            <label for="gauge1">Gauge 1 value</label>
+            <g:textField id="gauge1" name="value"/>
+            
+            <g:submitButton name="Update" value="Update"/>        
+        </g:formRemote>
+        <div id="updateGauge1"></div>
+        
+        <g:formRemote name="gauge2" update="updateGauge2" url="[controller:'demo', action:'updateDouble', params:[widgetId:'64747']]">
+            <label for="gauge2">Gauge 2 value</label>
+            <g:textField id="gauge2" name="value"/>
+            
+            <g:submitButton name="Update" value="Update"/>        
+        </g:formRemote>
+        <div id="updateGauge2"></div>
+        
+        <h2>Graphs</h2>
+        <g:formRemote name="graph1" update="updateGraph1" url="[controller:'demo', action:'updateTimestamp', params:[widgetId:'64800']]">
+            <div class="input-append date" id="datepicker" data-date-format="dd/mm/yyyy">
+                <input name="date" size="6" type="text" value="" readonly>
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div>
+            <g:textField id="graph1" name="value"/>
+            <g:submitButton name="Update" value="Update"/>        
+        </g:formRemote>
+        <div id="updateGraph1"></div>
+        
+        <g:formRemote name="graph2" update="updateGraph2" url="[controller:'demo', action:'updateTimestamp', params:[widgetId:'64799']]">
+            <div class="input-append date" id="datepicker" data-date-format="dd/mm/yyyy">
+                <input name="date" size="6" type="text" value="" readonly>
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div>
+            <g:textField id="graph2" name="value"/>
+            <g:submitButton name="Update" value="Update"/>        
+        </g:formRemote>
+        <div id="updateGraph2"></div>
+        
+        <g:formRemote name="graph3" update="updateGraph3" url="[controller:'demo', action:'updateTimestamp', params:[widgetId:'64798']]">
+            <div class="input-append date" id="datepicker" data-date-format="dd/mm/yyyy">
+                <input name="date" size="6" type="text" value="" readonly>
+                <span class="add-on"><i class="icon-th"></i></span>
+            </div>
+            <g:textField id="graph3" name="value"/>
+            <g:submitButton name="Update" value="Update"/>        
+        </g:formRemote>
+        <div id="updateGraph3"></div>
         
         <%--
 		<div id="controllerList" class="dialog">
