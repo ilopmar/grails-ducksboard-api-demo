@@ -76,6 +76,15 @@
 	<section id="controller">
 		<h1>Widgets</h1>
         
+        <h2>Counter</h2>
+        <g:formRemote name="counter1" update="updateCounter1" url="[controller:'demo', action:'updateLong', params:[countId:'64746']]">
+            <label for="counter1">Counter 1 value</label>
+            <g:textField id="counter1" name="value"/>
+            
+            <g:submitButton name="Update" value="Update"/>        
+        </g:formRemote>
+        <div id="updateCounter1"></div>
+        
         <h2>Pins</h2>
         <g:formRemote name="pin1" update="updatePin1" url="[controller:'demo', action:'updateLong', params:[countId:'64578']]">
             <label for="pin1">Pin 1 value</label>
@@ -118,6 +127,39 @@
             <g:submitButton name="Update" value="Update"/>        
         </g:formRemote>
         <div id="updateBox3"></div>
+        
+        <h2>Bars</h2>
+        <g:formRemote name="bar1" update="updateBar1" url="[controller:'demo', action:'updateLong', params:[countId:'64742']]">
+            <label for="bar1">Bar 1 value</label>
+            <g:textField id="bar1" name="value"/>
+            
+            <g:submitButton name="Update" value="Update"/>        
+        </g:formRemote>
+        <div id="updateBar1"></div>
+        
+        <g:formRemote name="bar2" update="updateBar2" url="[controller:'demo', action:'updateLong', params:[countId:'64743']]">
+            <label for="bar2">Bar 2 value</label>
+            <g:textField id="bar2" name="value"/>
+            
+            <g:submitButton name="Update" value="Update"/>        
+        </g:formRemote>
+        <div id="updateBar2"></div>
+        
+        <g:formRemote name="bar3" update="updateBar3" url="[controller:'demo', action:'updateLong', params:[countId:'64744']]">
+            <label for="bar3">Bar 3 value</label>
+            <g:textField id="bar3" name="value"/>
+            
+            <g:submitButton name="Update" value="Update"/>        
+        </g:formRemote>
+        <div id="updateBar3"></div>
+        
+        <g:formRemote name="bar4" update="updateBar4" url="[controller:'demo', action:'updateLong', params:[countId:'64745']]">
+            <label for="bar4">Bar 4 value</label>
+            <g:textField id="bar4" name="value"/>
+            
+            <g:submitButton name="Update" value="Update"/>        
+        </g:formRemote>
+        <div id="updateBar4"></div>
         
         
         <%--
