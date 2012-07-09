@@ -10,29 +10,18 @@
 	<title><g:layoutTitle default="${meta(name:'app.name')}" /></title>
 	<link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
 	
-	<link rel="stylesheet" href="${resource(dir:'bootstrap/css', file:'bootstrap.css')}" />
-	<link rel="stylesheet" href="${resource(dir:'bootstrap/css', file:'bootstrap-responsive.css')}" />
-	<link rel="stylesheet" href="${resource(dir:'kickstart/css', file:'docs.css')}" />
-	<link rel="stylesheet" href="${resource(dir:'kickstart/css', file:'kickstart.css')}" />
-	<link rel="stylesheet" href="${resource(dir:'datepicker/css',file:'datepicker.css')}" />
-    <link rel="stylesheet" href="${resource(dir:'css',file:'demo.css')}" />
-
     <link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png">
     
     <g:layoutHead />
+    <r:require modules="application"/>
+    
 	
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-
-    <script src="${resource(dir:'js',           file:'jquery-1.7.2.min.js')}"></script>    
-    <script src="${resource(dir:'bootstrap/js', file:'bootstrap.js')}"></script>
-	<script src="${resource(dir:'datepicker/js',file:'bootstrap-datepicker.js')}"></script>
-    <script src="${resource(dir:'kickstart/js', file:'kickstart.js')}"></script>
-	<script src="${resource(dir:'js',			file:'application.js')}"></script>
 
 	<r:layoutResources />
 </head>
@@ -49,11 +38,13 @@
 				</a>
 
 				<a class="brand" href="${createLink(uri: '/')}">
-					<img class="logo" src="${resource(dir:'kickstart/img',file:'grails.png')}" alt="${meta(name:'app.name')}" height="25" border="0" />
+                    <r:img class="logo" dir="kickstart/img" file="grails.png" alt="${meta(name:'app.name')}" height="25" border="0" />
+                    
 					${meta(name:'app.name')}
 					<small> v${meta(name:'app.version')}</small>
 				</a>
 
+                <%--
           		<div class="nav-collapse">
           			<ul class="nav">
 						<li class="dropdown">
@@ -71,6 +62,7 @@
 						<g:render template="/menu/info"/>														
 					</div>
 				</div>
+                --%>
 				
 			</div>
 		</div>

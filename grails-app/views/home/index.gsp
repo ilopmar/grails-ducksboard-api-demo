@@ -251,6 +251,15 @@
                 </g:formRemote>
                 <div id="updateGraph3"></div>
             </div>
+            
+            <div class="widget-wrapper clear">
+                <label>Update the graph with some random data</label>
+                <g:formRemote name="randomGraph" update="randomGraphs" url="[controller:'demo', action:'randomTimestamp']">
+                
+                <g:submitButton name="Update" value="Random graphs!"/>
+                </g:formRemote>
+                <div id="randomGraphs"></div>
+            </div>
         </div>
         
         <%--
