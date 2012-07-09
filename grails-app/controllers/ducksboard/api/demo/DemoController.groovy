@@ -1,5 +1,7 @@
 package ducksboard.api.demo
 
+import groovy.time.TimeCategory
+
 /**
  * DemoController
  * A controller class handles incoming web requests and performs actions such as redirects, rendering views and so on.
@@ -43,6 +45,43 @@ class DemoController {
             render "There was an error updating the widget"
         }
     }
+    
+    def randomTimestamp() {
+        ducksboardService.pushTimestampValues('64821', randomList(70, 20))
+        ducksboardService.pushTimestampValues('64820', randomList(10, 2))
+    }
 
+    
+   private List<Map> randomList(Integer base = 50, min = 20) {
+
+        Calendar cal = Calendar.getInstance()
+        cal.set(Calendar.HOUR, 0)
+        cal.set(Calendar.HOUR_OF_DAY, 0)
+        cal.set(Calendar.MINUTE, 0)
+        cal.set(Calendar.SECOND, 0)
+        cal.set(Calendar.MILLISECOND, 0)
+
+        def endDate = cal.clone()
+        def startDate
+        use (TimeCategory) {
+            startDate = endDate.time - 1.month
+        }
+
+        Date a1 = startDate
+        Date b1 = endDate.time
+
+        def random = new Random()
+
+        def list = []
+        for(date in b1..a1) {
+            def map = [:]
+            map.timestamp = date.time/1000
+            map.value = random.nextInt(base) + min
+
+            list << map
+        }
+
+        return list
+    }
     
 }
