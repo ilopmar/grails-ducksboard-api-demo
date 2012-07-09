@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="${resource(dir:'kickstart/css', file:'docs.css')}" />
 	<link rel="stylesheet" href="${resource(dir:'kickstart/css', file:'kickstart.css')}" />
 	<link rel="stylesheet" href="${resource(dir:'datepicker/css',file:'datepicker.css')}" />
+    <link rel="stylesheet" href="${resource(dir:'css',file:'demo.css')}" />
 
     <link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png">

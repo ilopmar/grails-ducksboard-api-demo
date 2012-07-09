@@ -1,0 +1,19 @@
+.widget {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.widget-wrapper {
+    float: left;
+    padding: 10px;
+}
+
+.date-select {
+    /*width: 70px;*/
+}
+
+h2 {
+    margin-top: 10px;
+    float: left;
+}
