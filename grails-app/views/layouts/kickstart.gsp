@@ -26,7 +26,8 @@
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <script src="${resource(dir:'js',           file:'jquery-1.7.2.min.js')}"></script>    
     <script src="${resource(dir:'bootstrap/js', file:'bootstrap.js')}"></script>
 	<script src="${resource(dir:'datepicker/js',file:'bootstrap-datepicker.js')}"></script>
     <script src="${resource(dir:'kickstart/js', file:'kickstart.js')}"></script>
