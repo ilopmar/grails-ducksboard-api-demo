@@ -21,3 +21,67 @@ h2 {
 .clear {
     clear: both;
 }
+
+
+#Header {
+    background-image: -moz-linear-gradient(#CC0066, #D65C94);
+    background-repeat: no-repeat;
+    margin: 40px 0 0;
+}
+
+#Header .title {
+    font-size: 60px;
+}
+
+#Header .inner {
+    padding: 54px 0;
+}
+
+input:focus, textarea:focus {
+    border-color: rgba(204, 0, 102, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(204, 0, 102, 0.6);
+    outline: 0 none;
+}
+
+.datepicker td.active, .datepicker td.active:hover, .datepicker td.active.disabled, .datepicker td.active.disabled:hover {
+    background-color: #CC0066;
+    background-image: -moz-linear-gradient(center top , #CC0066, #D65C94);
+}
+
+.datepicker td span.active, .datepicker td span.active:hover, .datepicker td span.active.disabled, .datepicker td span.active.disabled:hover {
+    background-color: #CC0066;
+    background-image: -moz-linear-gradient(center top , #CC0066, #D65C94);
+}
+
+.navbar-fixed-top {
+    position: absolute;
+}
+
+.span12, .container {
+    width: 940px !important;
+}
+
+.wrapper-title {
+    float: left;
+    width: 770px;
+    margin: 10px 0 0 20px;
+}
+
+.logo {
+    float: left;
+}
+
+#intro {
+    width: 100%;
+    overflow: auto;
+    margin-top: 10px;
+}
+
+.nav-header-text {
+    margin: 8px 0 0 35px;
+    width: 400px;
+}
+
+.p1 {
+    font-size: 18px;
+}

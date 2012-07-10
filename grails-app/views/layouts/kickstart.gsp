@@ -38,10 +38,11 @@
 				</a>
 
 				<a class="brand" href="${createLink(uri: '/')}">
-                    <r:img class="logo" dir="kickstart/img" file="grails.png" alt="${meta(name:'app.name')}" height="25" border="0" />
-                    
-					${meta(name:'app.name')}
-					<small> v${meta(name:'app.version')}</small>
+                    <r:img class="logo" dir="images" file="apple-touch-icon.png" height="25" border="0" />
+                    <div class="nav-header-text">
+					   ${meta(name:'app.name')}
+					   <small> v${meta(name:'app.version')}</small>
+                    </div>
 				</a>
 
                 <%--
