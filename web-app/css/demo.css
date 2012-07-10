@@ -22,10 +22,14 @@ h2 {
     clear: both;
 }
 
-
 #Header {
-    background-image: -moz-linear-gradient(#CC0066, #D65C94);
+    background-color: #CC0066;
     background-repeat: no-repeat;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#CC0066),to(#D65C94));
+    background-image: -webkit-linear-gradient(#CC0066, #D65C94);
+    background-image: -moz-linear-gradient(#CC0066,#D65C94);
+    background-image: -o-linear-gradient(top,#CC0066,#D65C94);
+    background-image: -khtml-gradient(linear,left top,left bottom,from(#CC0066),to(#D65C94));
     margin: 40px 0 0;
 }
 
