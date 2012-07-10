@@ -50,11 +50,22 @@ input:focus, textarea:focus {
 .datepicker td.active, .datepicker td.active:hover, .datepicker td.active.disabled, .datepicker td.active.disabled:hover {
     background-color: #CC0066;
     background-image: -moz-linear-gradient(center top , #CC0066, #D65C94);
+    background-image: -moz-linear-gradient(top,#CC0066,#D65C94);
+    background-image: -ms-linear-gradient(top,#CC0066,#D65C94);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#CC0066),to(#D65C94));
+    background-image: -webkit-linear-gradient(top,#CC0066,#D65C94);
+    background-image: -o-linear-gradient(top,#CC0066,#D65C94);
+    background-image: linear-gradient(top,#CC0066,#D65C94);
 }
 
 .datepicker td span.active, .datepicker td span.active:hover, .datepicker td span.active.disabled, .datepicker td span.active.disabled:hover {
     background-color: #CC0066;
-    background-image: -moz-linear-gradient(center top , #CC0066, #D65C94);
+    background-image: -moz-linear-gradient(top,#CC0066,#D65C94);
+    background-image: -ms-linear-gradient(top,#CC0066,#D65C94);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#CC0066),to(#D65C94));
+    background-image: -webkit-linear-gradient(top,#CC0066,#D65C94);
+    background-image: -o-linear-gradient(top,#CC0066,#D65C94);
+    background-image: linear-gradient(top,#CC0066,#D65C94);
 }
 
 .navbar-fixed-top {
