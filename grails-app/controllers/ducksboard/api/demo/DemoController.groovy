@@ -1,6 +1,7 @@
 package ducksboard.api.demo
 
 import groovy.time.TimeCategory
+import grails.converters.JSON
 
 /**
  * DemoController
@@ -15,21 +16,13 @@ class DemoController {
     def updateLong(String widgetId, Long value) {
         def result = ducksboardService.pushLongValue(widgetId, value)
         
-        if (result) {
-            render "Widget updated"
-        } else {
-            render "There was an error updating the widget"
-        }
+        return render(text:[success:result] as JSON, contentType:'text/json')
     }
     
     def updateDouble(String widgetId, Double value) {
         def result = ducksboardService.pushDoubleValue(widgetId, value)
         
-        if (result) {
-            render "Widget updated"
-        } else {
-            render "There was an error updating the widget"
-        }
+        return render(text:[success:result] as JSON, contentType:'text/json')
     }
     
     def updateTimestamp(String widgetId, Date date, Long value) {
@@ -39,16 +32,14 @@ class DemoController {
         
         def result = ducksboardService.pushTimestampValues(widgetId, [map])
         
-        if (result) {
-            render "Widget updated"
-        } else {
-            render "There was an error updating the widget"
-        }
+        return render(text:[success:result] as JSON, contentType:'text/json')
     }
     
     def randomTimestamp() {
-        ducksboardService.pushTimestampValues('64821', randomList(70, 20))
-        ducksboardService.pushTimestampValues('64820', randomList(10, 2))
+        def result = ducksboardService.pushTimestampValues('64821', randomList(70, 20))
+        result = ducksboardService.pushTimestampValues('64820', randomList(10, 2))
+        
+        return render(text:[success:result] as JSON, contentType:'text/json')
     }
 
     
