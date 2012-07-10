@@ -8,42 +8,42 @@ import grails.converters.JSON
  * A controller class handles incoming web requests and performs actions such as redirects, rendering views and so on.
  */
 class DemoController {
-    
+
     def ducksboardService
 
     static allowedMethods = [updateLong:"POST", updateDouble:"POST", updateTimestamp:"POST"]
-    
+
     def updateLong(String widgetId, Long value) {
         def result = ducksboardService.pushLongValue(widgetId, value)
-        
-        return render(text:[success:result] as JSON, contentType:'text/json')
-    }
-    
-    def updateDouble(String widgetId, Double value) {
-        def result = ducksboardService.pushDoubleValue(widgetId, value)
-        
-        return render(text:[success:result] as JSON, contentType:'text/json')
-    }
-    
-    def updateTimestamp(String widgetId, Date date, Long value) {
-        def map = [:]
-        map.timestamp = date.time/1000
-        map.value = value 
-        
-        def result = ducksboardService.pushTimestampValues(widgetId, [map])
-        
-        return render(text:[success:result] as JSON, contentType:'text/json')
-    }
-    
-    def randomTimestamp() {
-        def result = ducksboardService.pushTimestampValues('64821', randomList(70, 20))
-        result = ducksboardService.pushTimestampValues('64820', randomList(10, 2))
-        
+
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
 
-    
-   private List<Map> randomList(Integer base = 50, min = 20) {
+    def updateDouble(String widgetId, Double value) {
+        def result = ducksboardService.pushDoubleValue(widgetId, value)
+
+        return render(text:[success:result] as JSON, contentType:'text/json')
+    }
+
+    def updateTimestamp(String widgetId, Date date, Long value) {
+        def map = [:]
+        map.timestamp = date.time/1000
+        map.value = value
+
+        def result = ducksboardService.pushTimestampValues(widgetId, [map])
+
+        return render(text:[success:result] as JSON, contentType:'text/json')
+    }
+
+    def randomTimestamp() {
+        def result = ducksboardService.pushTimestampValues('64821', randomList(70, 20))
+        result = ducksboardService.pushTimestampValues('64820', randomList(10, 2))
+
+        return render(text:[success:result] as JSON, contentType:'text/json')
+    }
+
+
+    private List<Map> randomList(Integer base = 50, min = 20) {
 
         Calendar cal = Calendar.getInstance()
         cal.set(Calendar.HOUR, 0)
@@ -74,5 +74,5 @@ class DemoController {
 
         return list
     }
-    
+
 }
