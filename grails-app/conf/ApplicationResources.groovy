@@ -7,6 +7,7 @@ modules = {
         resource url='datepicker/js/bootstrap-datepicker.js'
         resource url='kickstart/js/kickstart.js'
         resource url='js/application.js'
+        resource url='js/kaleidos.notifier.js'
         
         resource url='bootstrap/css/bootstrap.css'
         resource url='bootstrap/css/bootstrap-responsive.css'
