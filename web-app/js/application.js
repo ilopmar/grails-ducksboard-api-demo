@@ -5,3 +5,17 @@ function _after(response) {
         $.knotify.message("There was an error updating the widget", "Data not pushed", 3000);
     }
 } 
+
+// Ajax post of the image
+$("#fileToUpload").change(function() {
+    var file = this.files[0];
+    var xhr = new XMLHttpRequest();
+    var url = $(this).attr('rel');
+    xhr.open('POST', url, true);
+    
+    xhr.onload = function(e) {  
+        var responseJSON = eval( "(" + xhr.response + ")" );
+        _after(responseJSON);
+    } 
+    xhr.send(file);
+});

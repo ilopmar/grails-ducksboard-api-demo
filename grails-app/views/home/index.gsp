@@ -194,6 +194,14 @@
                 </g:formRemote>
             </div>
         </div>
+        
+        <h2>Image</h2>
+        <div class="widget">
+            <div class="widget-wrapper">
+                <label for="image1">Select an image</label>
+                <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" autocomplete="off" rel="${createLink(controller:'demo', action:'pushImage', params:[widgetId:'65628'])}"/>
+            </div>
+        </div>
 
 	</section>
 

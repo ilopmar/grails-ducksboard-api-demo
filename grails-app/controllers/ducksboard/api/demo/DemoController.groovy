@@ -3,6 +3,10 @@ package ducksboard.api.demo
 import groovy.time.TimeCategory
 import grails.converters.JSON
 
+import org.springframework.web.multipart.MultipartHttpServletRequest
+import org.springframework.web.multipart.MultipartFile
+import javax.servlet.http.HttpServletRequest
+
 /**
  * DemoController
  * A controller class handles incoming web requests and performs actions such as redirects, rendering views and so on.
@@ -41,6 +45,15 @@ class DemoController {
 
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
+    
+    def pushImage(String widgetId) {
+        InputStream inputStream = selectInputStream(request)
+        def uploaded = File.createTempFile('ducksboard-api-demo', 'grails')
+        uploaded << inputStream
+        def result = ducksboardService.pushImage(widgetId, uploaded)
+        
+        return render(text:[success:result] as JSON, contentType:'text/json')
+    }
 
 
     private List<Map> randomList(Integer base = 50, min = 20) {
@@ -75,4 +88,12 @@ class DemoController {
         return list
     }
 
+    
+    private InputStream selectInputStream(HttpServletRequest request) {
+        if (request instanceof MultipartHttpServletRequest) {
+            MultipartFile uploadedFile = ((MultipartHttpServletRequest) request).getFile('qqfile')
+            return uploadedFile.inputStream
+        }
+        return request.inputStream
+    }
 }
