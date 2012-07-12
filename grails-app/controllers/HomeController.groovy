@@ -1,7 +1,6 @@
 class HomeController {
 
-    def index = {
+    def index() {
 		render(view:"index")
 	}
-	
 }
