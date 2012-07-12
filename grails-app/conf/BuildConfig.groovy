@@ -6,7 +6,7 @@ grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
-grails.plugin.location."ducksboard-api" = "../ducksboard-api"
+//grails.plugin.location."ducksboard-api" = "../ducksboard-api"
 
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
@@ -49,6 +49,8 @@ grails.project.dependency.resolution = {
         runtime ":cached-resources:1.0"
         compile ":cache-headers:1.1.5"
         runtime ":yui-minify-resources:0.1.4"
+        
+        compile ":ducksboard-api:0.2.1"
 
         build ":tomcat:$grailsVersion"
 
