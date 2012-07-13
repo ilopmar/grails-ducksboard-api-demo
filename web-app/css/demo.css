@@ -100,3 +100,12 @@ input:focus, textarea:focus {
 .p1 {
     font-size: 18px;
 }
+
+.uploader {
+    float:left;
+}
+
+.spinner {
+    float:left;
+    margin: 11px 0 0 10px;
+}

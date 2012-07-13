@@ -198,8 +198,11 @@
         <h2>Image</h2>
         <div class="widget">
             <div class="widget-wrapper">
-                <label for="image1">Select an image (it will be pushed automatically after you select it)</label>
-                <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" autocomplete="off" rel="${createLink(controller:'demo', action:'pushImage', params:[widgetId:'65628'])}"/>
+                <div class="uploader">
+                    <label for="image1">Select an image (it will be pushed automatically after you select it)</label>
+                    <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" autocomplete="off" rel="${createLink(controller:'demo', action:'pushImage', params:[widgetId:'65628'])}"/>
+                </div>
+                <r:img class="spinner hidden" dir="images" file="spinner-upload.gif" width="32" heigth="32" />
             </div>
         </div>
 

@@ -13,8 +13,11 @@ $("#fileToUpload").change(function() {
     var url = $(this).attr('rel');
     xhr.open('POST', url, true);
     
+    $('.spinner').removeClass('hidden');
+    
     xhr.onload = function(e) {  
         var responseJSON = eval( "(" + xhr.response + ")" );
+        $('.spinner').addClass('hidden');
         _after(responseJSON);
     } 
     xhr.send(file);
