@@ -3,6 +3,8 @@ package ducksboard.api.demo
 import groovy.time.TimeCategory
 import grails.converters.JSON
 
+import org.grails.plugins.ducksboard.push.StatusValues
+
 import org.springframework.web.multipart.MultipartHttpServletRequest
 import org.springframework.web.multipart.MultipartFile
 import javax.servlet.http.HttpServletRequest
@@ -45,19 +47,29 @@ class DemoController {
 
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
-    
+
     def pushImage(String widgetId) {
         InputStream inputStream = selectInputStream(request)
         def uploaded = File.createTempFile('ducksboard-api-demo', 'grails')
         uploaded << inputStream
         def result = ducksboardService.pushImage(widgetId, uploaded)
-        
+
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
 
+    def pushStatus(String widgetId, String statusValue) {
+        def status
+        try {
+            status = StatusValues.valueOf(statusValue)
+        } catch (java.lang.IllegalArgumentException e) {
+            status = StatusValues.UNKNOWN
+        }
+
+        def result = ducksboardService.pushStatus(widgetId, status)
+        return render(text:[success:result] as JSON, contentType:'text/json')
+    }
 
     private List<Map> randomList(Integer base = 50, min = 20) {
-
         Calendar cal = Calendar.getInstance()
         cal.set(Calendar.HOUR, 0)
         cal.set(Calendar.HOUR_OF_DAY, 0)
@@ -88,7 +100,7 @@ class DemoController {
         return list
     }
 
-    
+
     private InputStream selectInputStream(HttpServletRequest request) {
         if (request instanceof MultipartHttpServletRequest) {
             MultipartFile uploadedFile = ((MultipartHttpServletRequest) request).getFile('qqfile')
