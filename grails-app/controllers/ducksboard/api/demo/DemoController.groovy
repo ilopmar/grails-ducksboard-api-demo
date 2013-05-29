@@ -69,6 +69,11 @@ class DemoController {
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
 
+    def pushText(String widgetId, String text) {
+        def result = ducksboardService.pushText(widgetId, text)
+        return render(text:[success:result] as JSON, contentType:'text/json')
+    }
+
     private List<Map> randomList(Integer base = 50, min = 20) {
         Calendar cal = Calendar.getInstance()
         cal.set(Calendar.HOUR, 0)

@@ -208,6 +208,18 @@
             </div>
         </div>
 
+        <h2>Text</h2>
+        <div class="widget">
+            <div class="widget-wrapper">
+                <g:formRemote name="text" onSuccess="_after(data)" url="[controller:'demo', action:'pushText', params:[widgetId:'169104']]">
+                    <label for="graph1">Status value</label>
+                    <g:textArea name="text" placeholder="Please write the text to send to the widget" style="width:380px; height:115px"/>
+
+                    <g:submitButton name="Update" value="Update"/>
+                </g:formRemote>
+            </div>
+        </div>
+
         <h2>Image</h2>
         <div class="widget">
             <div class="widget-wrapper">
