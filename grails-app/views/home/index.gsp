@@ -220,6 +220,35 @@
             </div>
         </div>
 
+        <h2>Funnels</h2>
+        <div class="widget">
+            <div class="widget-wrapper">
+                <g:formRemote name="funnel1" onSuccess="_after(data)" url="[controller:'demo', action:'updateFunnel', params:[widgetId:'169128']]">
+                    <label for="funnel1">Funnel values</label>
+                    <g:textField id="name1" name="name1" placeholder="Name of the step 1"/>
+                    <g:textField id="value1" name="value1" placeholder="Value 1"/><br/>
+
+                    <g:textField id="name2" name="name2" placeholder="Name of the step 2"/>
+                    <g:textField id="value2" name="value2" placeholder="Value 2"/><br/>
+
+                    <g:textField id="name3" name="name3" placeholder="Name of the step 3"/>
+                    <g:textField id="value3" name="value3" placeholder="Value 3"/><br/>
+
+                    <g:textField id="name4" name="name4" placeholder="Name of the step 4"/>
+                    <g:textField id="value4" name="value4" placeholder="Value 4"/><br/>
+
+                    <g:textField id="name5" name="name5" placeholder="Name of the step 5"/>
+                    <g:textField id="value5" name="value5" placeholder="Value 5"/><br/>
+
+                    <g:textField id="name6" name="name6" placeholder="Name of the step 6"/>
+                    <g:textField id="value6" name="value6" placeholder="Value 6"/><br/>
+
+                    <g:submitButton name="Update" value="Update"/>
+                </g:formRemote>
+            </div>
+
+        </div>
+
         <h2>Image</h2>
         <div class="widget">
             <div class="widget-wrapper">

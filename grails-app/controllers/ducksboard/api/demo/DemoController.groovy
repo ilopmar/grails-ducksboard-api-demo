@@ -19,19 +19,19 @@ class DemoController {
 
     static allowedMethods = [updateLong:"POST", updateDouble:"POST", updateTimestamp:"POST"]
 
-    def updateLong(String widgetId, Long value) {
+    public updateLong(String widgetId, Long value) {
         def result = ducksboardService.pushLongValue(widgetId, value)
 
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
 
-    def updateDouble(String widgetId, Double value) {
+    public updateDouble(String widgetId, Double value) {
         def result = ducksboardService.pushDoubleValue(widgetId, value)
 
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
 
-    def updateTimestamp(String widgetId, Date date, Long value) {
+    public updateTimestamp(String widgetId, Date date, Long value) {
         def map = [:]
         map.timestamp = date.time/1000
         map.value = value
@@ -41,14 +41,14 @@ class DemoController {
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
 
-    def randomTimestamp() {
+    public randomTimestamp() {
         def result = ducksboardService.pushTimestampValues('64821', randomList(70, 20))
         result = ducksboardService.pushTimestampValues('64820', randomList(10, 2))
 
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
 
-    def pushImage(String widgetId) {
+    public pushImage(String widgetId) {
         InputStream inputStream = selectInputStream(request)
         def uploaded = File.createTempFile('ducksboard-api-demo', 'grails')
         uploaded << inputStream
@@ -57,7 +57,7 @@ class DemoController {
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
 
-    def pushStatus(String widgetId, String statusValue) {
+    public pushStatus(String widgetId, String statusValue) {
         def status
         try {
             status = StatusValues.valueOf(statusValue)
@@ -69,8 +69,28 @@ class DemoController {
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
 
-    def pushText(String widgetId, String text) {
+    public pushText(String widgetId, String text) {
         def result = ducksboardService.pushText(widgetId, text)
+        return render(text:[success:result] as JSON, contentType:'text/json')
+    }
+
+    public updateFunnel(String widgetId) {
+
+        def name1 = params.name1
+        def name2 = params.name2
+        def name3 = params.name3
+        def name4 = params.name4
+        def name5 = params.name5
+        def name6 = params.name6
+
+        def v1 = params.long('value1')
+        def v2 = params.long('value2')
+        def v3 = params.long('value3')
+        def v4 = params.long('value4')
+        def v5 = params.long('value5')
+        def v6 = params.long('value6')
+
+        def result = ducksboardService.pushFunnel(widgetId, [name1, name2, name3, name4, name5, name6], [v1, v2, v3, v4, v5, v6])
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
 
