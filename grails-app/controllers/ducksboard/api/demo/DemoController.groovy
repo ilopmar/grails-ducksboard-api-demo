@@ -94,6 +94,11 @@ class DemoController {
         return render(text:[success:result] as JSON, contentType:'text/json')
     }
 
+    public updateCompletion(String widgetId, Long minimum, Long maximum, Long value) {
+        def result = ducksboardService.pushCompletion(widgetId, minimum, maximum, value)
+        return render(text:[success:result] as JSON, contentType:'text/json')
+    }
+
     private List<Map> randomList(Integer base = 50, min = 20) {
         Calendar cal = Calendar.getInstance()
         cal.set(Calendar.HOUR, 0)

@@ -246,7 +246,20 @@
                     <g:submitButton name="Update" value="Update"/>
                 </g:formRemote>
             </div>
+        </div>
 
+        <h2>Completion</h2>
+        <div class="widget">
+            <div class="widget-wrapper">
+                <g:formRemote name="completion1" onSuccess="_after(data)" url="[controller:'demo', action:'updateCompletion', params:[widgetId:'182966']]">
+                    <label for="funnel1">Completion values</label>
+                    <g:textField id="minimum" name="minimum" placeholder="Minimum value"/>
+                    <g:textField id="maximum" name="maximum" placeholder="Maximum value "/>
+                    <g:textField id="value" name="value" placeholder="Current value"/>
+
+                    <g:submitButton name="Update" value="Update"/>
+                </g:formRemote>
+            </div>
         </div>
 
         <h2>Image</h2>
